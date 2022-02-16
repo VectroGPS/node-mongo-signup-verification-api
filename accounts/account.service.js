@@ -93,7 +93,8 @@ async function register(params, origin) {
 
     // hash password
     account.passwordHash = hash(params.password);
-
+    account.verificationToken = undefined;
+    account.verified = Date.now();
     // save account
     await account.save();
 
