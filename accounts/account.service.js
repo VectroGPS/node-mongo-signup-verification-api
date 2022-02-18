@@ -22,11 +22,11 @@ module.exports = {
     delete: _delete
 };
 
-async function authenticate({ email, password, ipAddress }) {
-    const account = await db.Account.findOne({ email });
-
+async function authenticate({ userName, password, ipAddress }) {
+    const account = await db.Account.findOne({ userName });
+    console.log(account, userName, password);
     if (!account || !account.isVerified || !bcrypt.compareSync(password, account.passwordHash)) {
-        throw 'Email or password is incorrect';
+        throw 'userName or password is incorrect';
     }
 
     // authentication successful so generate jwt and refresh tokens
@@ -246,8 +246,8 @@ function randomTokenString() {
 }
 
 function basicDetails(account) {
-    const { id, title, firstName, lastName, email, role, created, updated, isVerified } = account;
-    return { id, title, firstName, lastName, email, role, created, updated, isVerified };
+    const { id, userName, firstName, lastName, email, role, created, updated, isVerified } = account;
+    return { id, userName, firstName, lastName, email, role, created, updated, isVerified };
 }
 
 async function sendVerificationEmail(account, origin) {

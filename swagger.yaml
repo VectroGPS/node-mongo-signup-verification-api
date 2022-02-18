@@ -21,14 +21,14 @@ paths:
             schema:
               type: object
               properties:
-                email:
+                userName:
                   type: string
                   example: "jason@example.com"
                 password:
                   type: string
                   example: "pass123"
               required:
-                - email
+                - userName
                 - password
       responses:
         "200":
