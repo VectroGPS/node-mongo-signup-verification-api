@@ -1,5 +1,5 @@
 ﻿{
-    "connectionString": "mongodb://admin:admin@localhost:27018/Vectro_Lite",
+    "connectionString": "mongodb://admin:admin@162.248.55.111:27017/Vectro_Lite",
     "secret": "THIS IS USED TO SIGN AND VERIFY JWT TOKENS, REPLACE IT WITH YOUR OWN SECRET, IT CAN BE ANY STRING",
     "emailFrom": "info@node-mongo-signup-verification-api.com",
     "smtpOptions": {
